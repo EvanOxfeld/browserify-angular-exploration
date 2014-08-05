@@ -1,0 +1,22 @@
+{
+  "name": "todo-angular-browserify",
+  "version": "0.0.0",
+  "authors": [
+    "Evan Oxfeld <eoxfeld@gmail.com>"
+  ],
+  "description": "Toy todo app to test angular with browserify",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10",
+    "bootstrap": "~3.2.0"
+  }
+}
