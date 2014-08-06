@@ -14,7 +14,9 @@ angular
               '<div ng-show="todos.active">',
               'Name: <input ng-model="todos.active.name"/>',
               '<h4>Description:</h4>',
-              '<textarea rows="20" ng-model="todos.active.description"></textarea>'
+              '<textarea rows="20" ng-model="todos.active.description"></textarea>',
+              '</div>',
+              '<div ng-hide="todos.active"><-- Select a todo</div>'
             ].join('')
           }
         }
@@ -34,6 +36,10 @@ angular
       }, {
         name: 'baz',
         description: 'Voluptate ut tempor, nostrud dolor labore kielbasa in aliqua biltong consequat. Qui magna velit, voluptate meatball fugiat hamburger biltong drumstick landjaeger excepteur sirloin minim strip steak. Irure nisi do, in sirloin ribeye short ribs nulla filet mignon pig reprehenderit proident velit. Pancetta bacon capicola occaecat, cillum ball tip sausage prosciutto nulla aute duis brisket pastrami. Swine bresaola turducken pig ut. Consectetur brisket turkey dolore in in. Irure ball tip cupidatat ham hock, et veniam prosciutto sed shankle chuck commodo pariatur hamburger enim.'
-      }]
+      }],
+      delete: function(index) {
+        this.list.splice(index, 1);
+        delete this.active;
+      }
     };
   });
