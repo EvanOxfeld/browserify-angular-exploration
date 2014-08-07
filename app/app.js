@@ -1,4 +1,4 @@
-var uniq = require('uniq');
+var angular = require('angular');
 
 angular
   .module('myTodos', ['ui.router'])
@@ -19,7 +19,7 @@ angular
               '<h4>Description:</h4>',
               '<textarea rows="20" ng-model="todos.active.description"></textarea>',
               '</div>',
-              '<div ng-hide="todos.active"><-- Select a todo<br/>Ids: {{ todos.ids }}</div>'
+              '<div ng-hide="todos.active"><-- Select a todo</div>'
             ].join('')
           }
         }
@@ -43,7 +43,6 @@ angular
       delete: function(index) {
         this.list.splice(index, 1);
         delete this.active;
-      },
-      ids: uniq([1,2,2,2,3,3])
+      }
     };
   });
