@@ -1,3 +1,5 @@
+var uniq = require('uniq');
+
 angular
   .module('myTodos', ['ui.router'])
   .config(function($stateProvider) {
@@ -7,7 +9,8 @@ angular
         views: {
           'sidebarView': {
             template: '<ol><li ng-repeat="todo in todos.list"><a ng-click="todos.active = todo">{{ todo.name }}</a>' +
-                     ' [<a href ng-click="todos.list.splice($index, 1)">X</a>]</li></ol>'
+                     ' [<a href ng-click="todos.delete($index)">X</a>]</li></ol>' +
+                      '<h3 ng-hide="todos.list.length > 0">No Todos</h3>'
           },
           'mainView': {
             template: [
@@ -16,7 +19,7 @@ angular
               '<h4>Description:</h4>',
               '<textarea rows="20" ng-model="todos.active.description"></textarea>',
               '</div>',
-              '<div ng-hide="todos.active"><-- Select a todo</div>'
+              '<div ng-hide="todos.active"><-- Select a todo<br/>Ids: {{ todos.ids }}</div>'
             ].join('')
           }
         }
@@ -40,6 +43,7 @@ angular
       delete: function(index) {
         this.list.splice(index, 1);
         delete this.active;
-      }
+      },
+      ids: uniq([1,2,2,2,3,3])
     };
   });
