@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "",
   "main": "bundle.js",
-  "dependencies": {},
+  "dependencies": {
+    "angular-ui-router": "^0.2.10"
+  },
   "devDependencies": {
     "browserify": "^4.2.3",
-    "browserify-shim": "^3.6.0",
-    "napa": "^0.4.1"
+    "browserify-shim": "^3.6.0"
   },
   "browserify": {
     "transform": [ "browserify-shim" ]
@@ -15,11 +16,7 @@
   "browserify-shim": {
     "angular": "global:angular"
   },
-  "napa": {
-    "angular-ui-router": "angular-ui/ui-router#0.2.10"
-  },
   "scripts": {
-    "install": "napa",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

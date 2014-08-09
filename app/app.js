@@ -2,7 +2,7 @@ var angular = require('angular');
 
 angular
   .module('myTodos', [
-    require('angular-ui-router/release/angular-ui-router.js')
+    require('angular-ui-router')
   ])
   .config(function($stateProvider) {
     $stateProvider
