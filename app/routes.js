@@ -1,5 +1,5 @@
 //todo retrieve inlined templates from disk using brfs
-module.exports = function($stateProvider) {
+module.exports = /*@ngInject*/ function($stateProvider) {
   $stateProvider
     .state('index', {
       url: '',

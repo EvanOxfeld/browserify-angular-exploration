@@ -1,4 +1,4 @@
-module.exports = function($scope) {
+module.exports = /*@ngInject*/ function($scope) {
   $scope.todos = {
     list: [{
       name: 'foo',
