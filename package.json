@@ -21,7 +21,11 @@
     "angular": "global:angular"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install -g browserify watchify beefy",
+    "bundle": "browserify app/app.js -o bundle.js",
+    "watch": "watchify app/app.js -o bundle.js",
+    "live-reload": "beefy app/app.js:bundle.js --live"
   },
   "author": "Evan Oxfeld <eoxfeld@gmail.com>",
   "license": "MIT"
