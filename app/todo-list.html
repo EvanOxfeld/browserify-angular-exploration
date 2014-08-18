@@ -1,0 +1,16 @@
+<div class="col-sm-3 col-md-2 sidebar">
+
+
+<ol>
+	<li ng-repeat="todo in todos.list">
+		<a ui-sref="todos.detail({index: $index})">{{ todo.name }}</a>
+		[<a href ng-click="todos.delete($index)">X</a>]
+	</li>
+</ol>
+<h3 ng-hide="todos.list.length">No Todos</h3>
+
+</div>
+
+<ui-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div>&lt;-- Select a todo</div>
+</ui-view>
